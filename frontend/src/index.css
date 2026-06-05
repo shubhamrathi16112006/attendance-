@@ -1,0 +1,129 @@
+:root {
+  /* Core palette */
+  --bg-primary:    #0f0f14;
+  --bg-secondary:  #16161f;
+  --bg-card:       #1c1c28;
+  --bg-hover:      #22222f;
+  --border:        #2a2a3a;
+  --accent:        #6c63ff;
+  --accent-hover:  #7b73ff;
+  --text-primary:  #e8e8f0;
+  --text-muted:    #7a7a9a;
+  --success:       #2ed573;
+  --warning:       #ffa502;
+  --danger:        #ff4757;
+  --sidebar-width: 260px;
+
+  /* Aliases used in Sidebar.css and Auth.css */
+  --bg-base:          #0f0f14;
+  --bg-surface:       #16161f;
+  --bg-elevated:      #1c1c28;
+  --bg-raised:        #22222f;
+
+  --border-subtle:    #2a2a3a;
+  --border-accent:    rgba(108, 99, 255, 0.4);
+
+  --accent-primary:   #6c63ff;
+  --accent-secondary: #00d4b4;
+  --accent-success:   #2ed573;
+  --accent-danger:    #ff4757;
+
+  --text-secondary:   #b0b0c8;
+
+  --font-display:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body:     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  14px;
+
+  --transition-base:   0.18s ease;
+  --transition-spring: 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-body {
+  flex: 1;
+  padding: 2rem;
+}
+
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+  background: var(--bg-primary);
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Shared card */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+/* Avatar */
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 700;
+  color: #fff;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.avatar-sm {
+  width: 32px;
+  height: 32px;
+  font-size: 0.7rem;
+}
+
+h1, h2, h3 { color: var(--text-primary); }
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Sidebar pulse animation used in Sidebar.css */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4); }
+  50%       { box-shadow: 0 4px 25px rgba(108, 99, 255, 0.7); }
+}
